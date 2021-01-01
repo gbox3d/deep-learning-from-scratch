@@ -1,4 +1,4 @@
-# coding: utf-8
+#%% coding: utf-8
 import sys, os
 sys.path.append(os.pardir)  # 부모 디렉터리의 파일을 가져올 수 있도록 
 import numpy as np
@@ -6,11 +6,10 @@ import pickle
 from dataset.mnist import load_mnist
 from common.functions import sigmoid, softmax
 
-
+#%%
 def get_data():
     (x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, flatten=True, one_hot_label=False)
     return x_test, t_test
-
 
 def init_network():
     with open("sample_weight.pkl", 'rb') as f:
@@ -31,7 +30,7 @@ def predict(network, x):
 
     return y
 
-
+#%%
 x, t = get_data()
 network = init_network()
 
